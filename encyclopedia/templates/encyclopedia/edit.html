@@ -1,19 +1,18 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    Create
+    Edit
 {% endblock %}
 
 {% block body %}
-    <h1>Create an entry</h1>
+    <h1>Edit this entry</h1>
     <form method ="POST">
         {% csrf_token %}
-        {{ message }}
         <div>
-        <input placeholder="Title" type="text" style="margin-top:15px;" name="title">
+        <input placeholder="Title" type="text" style="margin-top:15px;" name="title" value ="{{ title }}">
         </div>
         <div>
-        <textarea  placeholder="Content" style="margin-top:30px;height:500px;" name ="content"></textarea>
+        <textarea  placeholder="Content" style="margin-top:30px;height:500px;" name ="content">{{ content }}</textarea>
         </div>
         <button type="submit">Submit</button>
     </form>

@@ -8,5 +8,10 @@
     <div>
         {{ content|safe }}
     </div>
+    
+        <form action="{% url 'edit' title=title %}">
+        <button type="submit">Edit this page</button>
+    </form>
+    
 
 {% endblock %}
